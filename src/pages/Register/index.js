@@ -18,17 +18,19 @@ export default function Register() {
   async function register() {
     setIsLoading(true);
     try {
-      const newUser = await axios.post('/user/', {
+      const response = await axios.post('/user', {
         name,
         password,
         email,
       });
 
+      const newUser = response.data;
+
       await axios.post('/role', {
         user_id: newUser.id,
       });
 
-      toast.success(`Successfuly registered.`);
+      toast.success(`Successfuly registered`);
       setIsLoading(false);
 
       history.push('/login');
