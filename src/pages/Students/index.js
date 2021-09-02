@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUserCircle, FaEdit, FaWindowClose } from 'react-icons/fa';
+import { FaUserCircle, FaWindowClose } from 'react-icons/fa';
 
 import { Container } from '../../styles/GlobalStyles';
 import { StudentContainer } from './styled';
@@ -37,10 +37,6 @@ export default function Students() {
             <span>{student.fullname}</span>
             <span>{student.age}</span>
             <span>{student.grade}</span>
-
-            <Link to={`/student/${student.id}/edit`}>
-              <FaEdit size={16} />
-            </Link>
 
             <Link to={`/student/${student.id}/delete`}>
               <FaWindowClose size={16} />

@@ -16,7 +16,7 @@ function* loginRequest({ payload }) {
 
     toast.success('Successfuly logged');
 
-    axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
+    axios.defaults.headers.authorization = `Bearer ${response.data.token}`;
 
     history.push(payload.prevPath);
   } catch (error) {
@@ -29,7 +29,7 @@ function* loginRequest({ payload }) {
 function persistRehydrate({ payload }) {
   const token = get(payload, 'auth.token');
   if (!token) return;
-  axios.defaults.headers.Authorization = `Bearer ${token}`;
+  axios.defaults.headers.authorization = `Bearer ${token}`;
 }
 
 export default all([
