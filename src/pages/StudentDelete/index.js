@@ -6,6 +6,7 @@ import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
 import Loading from '../../components/Loading';
 import axios from '../../services/axios';
+import history from '../../services/history';
 
 export default function StudentDelete({ match }) {
   const [fullname, setFullname] = useState([]);
@@ -36,7 +37,8 @@ export default function StudentDelete({ match }) {
       await axios.delete(`/students/${match.params.id}`);
 
       toast.success('Estudante deletado com sucesso.');
-      return setIsLoading(false);
+      setIsLoading(false);
+      return history.push('/students');
     } catch (error) {
       toast.error('Você não está autorizado para realizar esta ação.');
       return setIsLoading(false);
