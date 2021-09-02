@@ -22,5 +22,8 @@ export const Form = styled.form`
     &:focus {
       border: 1px solid ${colors.primaryColor};
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;

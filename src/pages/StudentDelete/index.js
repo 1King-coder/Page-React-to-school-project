@@ -8,7 +8,7 @@ import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 
 export default function StudentDelete({ match }) {
-  const [name, setName] = useState([]);
+  const [fullname, setFullname] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   // eslint-disable-next-line
@@ -18,7 +18,7 @@ export default function StudentDelete({ match }) {
       const response = await axios.get(`students/${match.params.id}`);
       const student = response.data;
 
-      setName(student.fullname);
+      setFullname(student.fullname);
 
       setIsLoading(false);
       return student;
@@ -33,24 +33,25 @@ export default function StudentDelete({ match }) {
     e.preventDefault();
 
     try {
-      await axios.delete(`/student/${match.params.id}`);
+      await axios.delete(`/students/${match.params.id}`);
+
+      toast.success('Estudante deletado com sucesso.');
       return setIsLoading(false);
     } catch (error) {
-      toast.error('Estudante não encontrado');
-
+      toast.error('Você não está autorizado para realizar esta ação.');
       return setIsLoading(false);
     }
   }
 
   return (
     <Container onLoad={getStudent}>
-      <h1>Login</h1>
+      <h1>Deletar estudante</h1>
       <Loading isLoading={isLoading} />
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="Sure">
-          Tem certeza que deseja deletar {name}
-          <input type="button" value="Yes" onClick={handleSubmit} />
+          Tem certeza que deseja deletar {fullname}?
+          <input type="button" value="Sim" onClick={handleSubmit} />
         </label>
       </Form>
     </Container>

@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { isEmail } from 'validator';
 import { toast } from 'react-toastify';
 import { get } from 'lodash';
-// import { useDispatch } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import Loading from '../../components/Loading';
 import { Form } from './styled';
 import axios from '../../services/axios';
 import history from '../../services/history';
-
-// import notify from '../../config/notify';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -21,10 +18,14 @@ export default function Register() {
   async function register() {
     setIsLoading(true);
     try {
-      await axios.post('/users/', {
+      const newUser = await axios.post('/user/', {
         name,
         password,
         email,
+      });
+
+      await axios.post('/role', {
+        user_id: newUser.id,
       });
 
       toast.success(`Successfuly registered.`);
