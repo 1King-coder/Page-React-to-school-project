@@ -9,6 +9,7 @@ import AddStudent from '../pages/AddStudent';
 import Register from '../pages/Register';
 import Page404 from '../pages/404';
 import Home from '../pages/Home';
+import AnswerQuestions from '../pages/AnswerQuestions';
 
 export default function Routes() {
   return (
@@ -18,6 +19,12 @@ export default function Routes() {
         exact
         path="/add-student"
         component={AddStudent}
+        isClosed={false}
+      />
+      <MyRoute
+        exact
+        path="/answer-questions/:id"
+        component={AnswerQuestions}
         isClosed={false}
       />
       <MyRoute exact path="/" component={Home} isClosed={false} />

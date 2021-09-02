@@ -1,0 +1,62 @@
+{
+  "Q1": {
+    "title": "1 . Nas situações em que se deve escolher os membros do grupo, você:",
+    "op1": "Prefere que a escolha seja pessoal, cada um selecionando seu grupo.",
+    "op2": "Acha melhor que alguém determine a formação dos grupos.",
+    "op3": "Não tem preferência, tanto faz."
+  },
+  "Q2": {
+    "title": "2 . Nas situações em que a escolha dos grupos é determinada por outras pessoas, você:",
+    "op1": "Sempre acha que teria sido melhor ter ficado em outro grupo.",
+    "op2": "Acha bom quando há pessoas no seu grupo que você conhece pouco.",
+    "op3": "Não se importa muito com quem vai trabalhar."
+  },
+  "Q3": {
+    "title": "3 . Nos grupos de que você participa:",
+    "op1": "Há sempre mais pessoas conhecidas do que desconhecidas.",
+    "op2": "Há sempre pessoas desconhecidas.",
+    "op3": "Você nem repara nas pessoas."
+  },
+  "Q4": {
+    "title":"4 . Como você se comporta quando pessoas que não são de seu relacionamento pessoal vêm fazer parte do seu grupo?",
+    "op1":"Você trabalha normalmente, mas não procura estabelecer maior aproximação.",
+    "op2":"Acha sempre um jeito de fazer perguntas para conhecer melhor essa pessoa.",
+    "op3":"Nem sabe dizer, porque você sempre conhece e se relaciona com todo mundo."
+  },
+  "Q5": {
+    "title":"5 . No início da organização do trabalho você prefere:",
+    "op1":"Tomar a frente e começar a organizar a equipe.",
+    "op2":"Que alguém assuma a liderança e a condução do trabalho.",
+    "op3":"Observar como as coisas se desenrolam até tomar uma atitude."
+  },
+  "Q6": {
+    "title":"6 . Se um colega assume a liderança do grupo e começa a dar as orientações aos demais, sua tendência é:",
+    "op1":"Adotar uma postura mais crítica, propondo questionamentos acerca do que está sendo orientado.",
+    "op2":"Acatar se concordar, mas se opor se não considerar as orientações apropriadas.",
+    "op3":"seguir o que está sendo proposto, afinal, é essa pessoa que está liderando o grupo"
+  },
+  "Q7": {
+    "title":"7 . Quando há distribuição das tarefas, que atividades você prefere realizar?",
+    "op1":"As relacionadas à apresentação do trabalho.",
+    "op2":"As mais estratégicas, que vão guiar o trabalho.",
+    "op3":"As de pesquisa, de apoio ou algo mais de segundo plano."
+  },
+  "Q8": {
+    "title":"8 . Durante a realização do trabalho, você procura saber o que os demais participantes estão fazendo?",
+    "op1":"Sim, sempre.",
+    "op2":"Talvez, se for algo que interesse.",
+    "op3":"Nunca, porque cuidar de sua parte já consome tempo suficiente."
+  },
+  "Q9": {
+    "title":"9 . Você se coloca à disposição para ser um dos apresentadores do trabalho?",
+    "op1":"Sim, sempre.",
+    "op2":"Sim, se ninguém melhor se apresentar.",
+    "op3":"Nunca."
+  },
+  "Q10": {
+    "title":"10 . Ao término do trabalho, você:",
+    "op1":"Tende a achar que, se ele tivesse sido conduzido por você, o resultado seria melhor.",
+    "op2":"Reconhece que a contribuição dos colegas resultou em algo melhor do que você estava esperando.",
+    "op3":"Fica aliviado em saber que os colegas possibilitaram um resultado que, sozinho, você não atingiria."
+  }
+}

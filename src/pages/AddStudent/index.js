@@ -19,9 +19,12 @@ export default function StudentAdd() {
   async function storeStudent(data) {
     try {
       setIsLoading(true);
-      await axios.post(`/students`, data);
+      const response = await axios.post(`/students`, data);
 
-      return setIsLoading(false);
+      const student = response.data;
+
+      setIsLoading(false);
+      return student;
     } catch (error) {
       toast.error('Estudante já existente.');
       return setIsLoading(false);
@@ -51,12 +54,12 @@ export default function StudentAdd() {
         genre,
       };
 
-      await storeStudent(data);
+      const student = await storeStudent(data);
 
       setIsLoading(false);
 
       toast.success('Estudante criado com sucesso.');
-      history.push('/answer-questions');
+      history.push(`/answer-questions/${student.id}`);
       return setIsLoading(false);
     } catch (error) {
       return toast.error('Não foi possível estabelecer comunicação com a API.');
