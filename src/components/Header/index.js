@@ -3,7 +3,7 @@ import {
   FaHome,
   FaSignInAlt,
   FaSignOutAlt,
-  FaUserAlt,
+  FaAddressBook,
   FaFileAlt,
 } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
@@ -19,9 +19,13 @@ export default function Header() {
         <Link to="/">
           <FaHome size={24} />
         </Link>
-        <Link to="/register">
-          <FaUserAlt size={24} />
-        </Link>
+        {user ? (
+          <></>
+        ) : (
+          <Link to="/register">
+            <FaAddressBook size={24} />
+          </Link>
+        )}
         <Link to="/add-student">
           <FaFileAlt size={24} />
         </Link>
