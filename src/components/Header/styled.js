@@ -12,5 +12,9 @@ export const Nav = styled.nav`
     color: #fff;
     margin: 0 25px 0 0;
     font-weight: bold;
+    transition: all 400ms;
+    &:hover {
+      filter: brightness(70%);
+    }
   }
 `;

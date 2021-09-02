@@ -5,6 +5,7 @@ export const IconsContainer = styled.div`
   margin-top: 20px;
   align-content: center;
   justify-content: center;
+  text-align: center;
 
   div {
     display: flex;
@@ -19,7 +20,11 @@ export const IconsContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin: 0px 10px;
+    margin: 5px 10px;
+    transition: all 400ms;
+    &:hover {
+      filter: brightness(75%);
+    }
   }
 
   .icon {

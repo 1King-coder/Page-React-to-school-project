@@ -5,6 +5,7 @@ import {
   FaSignOutAlt,
   FaAddressBook,
   FaFileAlt,
+  FaBookReader,
 } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -18,6 +19,9 @@ export default function Header() {
       <Nav>
         <Link to="/">
           <FaHome size={24} />
+        </Link>
+        <Link to="/students">
+          <FaBookReader size={24} />
         </Link>
         {user ? (
           <></>

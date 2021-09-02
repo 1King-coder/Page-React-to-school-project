@@ -23,7 +23,6 @@ export default function StudentAdd() {
 
       return setIsLoading(false);
     } catch (error) {
-      console.log(error);
       toast.error('Estudante já existente.');
       return setIsLoading(false);
     }
