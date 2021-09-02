@@ -5,7 +5,7 @@ import MyRoute from './myRoute';
 import Login from '../pages/Login';
 import StudentDelete from '../pages/StudentDelete';
 import Students from '../pages/Students';
-import StudentAdd from '../pages/StudentAdd';
+import AddStudent from '../pages/AddStudent';
 import Register from '../pages/Register';
 import Page404 from '../pages/404';
 import Home from '../pages/Home';
@@ -17,7 +17,7 @@ export default function Routes() {
       <MyRoute
         exact
         path="/add-student"
-        component={StudentAdd}
+        component={AddStudent}
         isClosed={false}
       />
       <MyRoute exact path="/" component={Home} isClosed={false} />

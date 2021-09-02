@@ -12,7 +12,9 @@ export const Form = styled.form`
     margin-bottom: 20px;
   }
 
-  input {
+  input,
+  select {
+    display: flex;
     height: 40px;
     font-size: 18px;
     border: 1px solid #ddd;
@@ -21,9 +23,6 @@ export const Form = styled.form`
     margin-top: 5px;
     &:focus {
       border: 1px solid ${colors.primaryColor};
-    }
-    &:hover {
-      cursor: pointer;
     }
   }
 `;
