@@ -1,25 +1,39 @@
 import React from 'react';
-import { FaHome, FaSignInAlt, FaUserAlt, FaFileAlt } from 'react-icons/fa';
+import {
+  FaHome,
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaUserAlt,
+  FaFileAlt,
+} from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Nav } from './styled';
 
 export default function Header() {
+  const user = useSelector((state) => state.auth.user);
   return (
     <>
       <Nav>
-        <Link to="/students">
+        <Link to="/">
           <FaHome size={24} />
         </Link>
         <Link to="/register">
           <FaUserAlt size={24} />
         </Link>
-        <Link to="/answer-questions">
+        <Link to="/add-student">
           <FaFileAlt size={24} />
         </Link>
-        <Link to="/login">
-          <FaSignInAlt size={24} />
-        </Link>
+        {user ? (
+          <Link to="/logout">
+            <FaSignOutAlt size={24} />
+          </Link>
+        ) : (
+          <Link to="/login">
+            <FaSignInAlt size={24} />
+          </Link>
+        )}
       </Nav>
     </>
   );

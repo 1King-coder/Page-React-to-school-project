@@ -8,11 +8,13 @@ import Students from '../pages/Students';
 
 import Register from '../pages/Register';
 import Page404 from '../pages/404';
+import Home from '../pages/Home';
 
 export default function Routes() {
   return (
     <Switch>
       <MyRoute exact path="/students" component={Students} isClosed={false} />
+      <MyRoute exact path="/" component={Home} isClosed={false} />
       <MyRoute
         exact
         path="/student/:id/delete"
