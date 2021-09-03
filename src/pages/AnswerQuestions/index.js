@@ -31,7 +31,7 @@ export default function AnswerQuestions({ match }) {
 
       return true;
     } catch (error) {
-      return console.log(error);
+      return toast.error('Ocorreu um erro, contate o desenvolvedor.');
     }
   }
 
@@ -66,7 +66,6 @@ export default function AnswerQuestions({ match }) {
 
   function handleClick(e, index) {
     answers[index] = e.target.value;
-    console.log(answers);
   }
 
   async function handleSubmit(e) {

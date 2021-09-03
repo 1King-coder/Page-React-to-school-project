@@ -82,21 +82,21 @@ export default function Register() {
           />
         </label>
         <label htmlFor="email">
-          Email:
+          E-mail:
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Your email"
+            placeholder="Seu e-mail"
           />
         </label>
         <label htmlFor="password">
-          Password:
+          Senha:
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Your password"
+            placeholder="Sua senha"
           />
         </label>
         <button type="submit">Create account</button>

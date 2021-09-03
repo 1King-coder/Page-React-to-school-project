@@ -11,6 +11,7 @@ import Page404 from '../pages/404';
 import Home from '../pages/Home';
 import AnswerQuestions from '../pages/AnswerQuestions';
 import Thanks from '../pages/Thanks';
+import Logout from '../pages/Logout';
 
 export default function Routes() {
   return (
@@ -36,8 +37,9 @@ export default function Routes() {
         component={StudentDelete}
         isClosed
       />
-      <MyRoute exact path="/login/" component={Login} isClosed={false} />
-      <MyRoute exact path="/register/" component={Register} isClosed={false} />
+      <MyRoute exact path="/login" component={Login} isClosed={false} />
+      <MyRoute exact path="/logout" component={Logout} isClosed={false} />
+      <MyRoute exact path="/register" component={Register} isClosed={false} />
       <MyRoute path="*" component={Page404} />
     </Switch>
   );

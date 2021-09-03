@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { Nav } from './styled';
 
 export default function Header() {
-  const user = useSelector((state) => state.auth.user);
+  const { isLoggedIn } = useSelector((state) => state.auth);
   return (
     <>
       <Nav>
@@ -23,7 +23,7 @@ export default function Header() {
         <Link to="/students">
           <FaBookReader size={24} />
         </Link>
-        {user ? (
+        {isLoggedIn ? (
           <></>
         ) : (
           <Link to="/register">
@@ -33,7 +33,7 @@ export default function Header() {
         <Link to="/add-student">
           <FaFileAlt size={24} />
         </Link>
-        {user ? (
+        {isLoggedIn ? (
           <Link to="/logout">
             <FaSignOutAlt size={24} />
           </Link>

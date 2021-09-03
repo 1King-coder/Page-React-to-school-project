@@ -13,10 +13,10 @@ import { Container } from '../../styles/GlobalStyles';
 import { IconsContainer } from './styled';
 
 export default function Home() {
-  const user = useSelector((state) => state.auth.user);
+  const { user, isLoggedIn } = useSelector((state) => state.auth);
 
-  function isLoggedIn() {
-    if (user) {
+  function isLogged() {
+    if (isLoggedIn) {
       return (
         <>
           <h1>Olá, {user.name}!</h1>
@@ -57,7 +57,7 @@ export default function Home() {
     }
     return (
       <>
-        <h1>Olá, {user.name}!</h1>
+        <h1>Olá estudante!</h1>
         <IconsContainer>
           <div>
             <Link to="/add-student">
@@ -90,5 +90,5 @@ export default function Home() {
     );
   }
 
-  return <Container>{isLoggedIn()}</Container>;
+  return <Container>{isLogged()}</Container>;
 }
