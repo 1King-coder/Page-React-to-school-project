@@ -12,6 +12,25 @@ import Questions from '../../static/questions.json';
 export default function AnswerQuestions({ match }) {
   const [isLoading, setIsLoading] = useState(false);
 
+  async function verifyIfStudentAlreadyAnswered() {
+    try {
+      const response = await axios.get(`/questions/${match.params.id}`);
+
+      const student = response.data;
+
+      if (Number(student.id) === Number(match.params.id)) {
+        toast.error('Você já respondeu este questionário!');
+        return history.push('/');
+      }
+
+      return true;
+    } catch (error) {
+      return toast.error('Ocorreu um erro, contate o desenvolvedor.');
+    }
+  }
+
+  verifyIfStudentAlreadyAnswered();
+
   const questions = [
     Questions.Q1,
     Questions.Q2,

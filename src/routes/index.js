@@ -10,6 +10,7 @@ import Register from '../pages/Register';
 import Page404 from '../pages/404';
 import Home from '../pages/Home';
 import AnswerQuestions from '../pages/AnswerQuestions';
+import Thanks from '../pages/Thanks';
 
 export default function Routes() {
   return (
@@ -27,6 +28,7 @@ export default function Routes() {
         component={AnswerQuestions}
         isClosed={false}
       />
+      <MyRoute exact path="/thanks" component={Thanks} isClosed={false} />
       <MyRoute exact path="/" component={Home} isClosed={false} />
       <MyRoute
         exact
