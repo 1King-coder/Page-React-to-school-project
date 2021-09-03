@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form, QuestionContainer } from './styled';
@@ -11,6 +12,7 @@ import Questions from '../../static/questions.json';
 
 export default function AnswerQuestions({ match }) {
   const [isLoading, setIsLoading] = useState(false);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   async function verifyIfStudentAlreadyAnswered() {
     try {
@@ -18,14 +20,18 @@ export default function AnswerQuestions({ match }) {
 
       const student = response.data;
 
-      if (Number(student.id) === Number(match.params.id)) {
+      if (!student) {
+        return true;
+      }
+
+      if (Number(student.student_id) === Number(match.params.id)) {
         toast.error('Você já respondeu este questionário!');
         return history.push('/');
       }
 
       return true;
     } catch (error) {
-      return toast.error('Ocorreu um erro, contate o desenvolvedor.');
+      return console.log(error);
     }
   }
 
@@ -104,12 +110,43 @@ export default function AnswerQuestions({ match }) {
     }
   }
 
+  if (isLoggedIn) {
+    const flagArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    return (
+      <Container>
+        <Loading isLoading={isLoading} />
+        <h1>Insira as respostas do aluno nas caixas abaixo: </h1>
+        <Form onSubmit={handleSubmit}>
+          <QuestionContainer isLogged>
+            {flagArray.map((question) => (
+              <div key={question} className="select-div">
+                <label htmlFor={`answer-${question}`}>
+                  Resposta para questão {question + 1}
+                  <select
+                    name={`answer-${question}`}
+                    onChange={(e) => handleClick(e, question)}
+                  >
+                    <option value=""> </option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                  </select>
+                </label>
+              </div>
+            ))}
+          </QuestionContainer>
+        </Form>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <h1>Responda as perguntas abaixo:</h1>
       <Loading isLoading={isLoading} />
+
       <Form onSubmit={handleSubmit}>
-        <QuestionContainer>
+        <QuestionContainer isLogged={false}>
           {questions.map((question, index) => (
             <div key={`Q${index + 1}`}>
               {question.title}

@@ -29,7 +29,7 @@ export const Form = styled.form`
 `;
 
 export const QuestionContainer = styled.div`
-  border: 1px solid #ddd;
+  border: ${(props) => (props.isLogged ? 'none' : '1px solid #ddd')};
   border-radius: 20px;
   margin-bottom: 20px;
 
@@ -37,9 +37,10 @@ export const QuestionContainer = styled.div`
     padding: 20px;
     font-size: 14pt;
   }
+
   label {
     display: flex;
-    margin-top: 20px;
+    margin-top: 5px;
     flex-direction: row;
     align-items: center;
   }
@@ -60,5 +61,23 @@ export const QuestionContainer = styled.div`
   .radio-btn {
     border: 1px solid #ddd;
     border-radius: 20px;
+  }
+
+  select {
+    font-size: 13pt;
+    font-weight: 600;
+    width: 45px;
+    height: 35px;
+    margin-left: 2em;
+    margin-top: 0px;
+  }
+
+  .select-div {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0px;
+    margin: 10px 0;
   }
 `;

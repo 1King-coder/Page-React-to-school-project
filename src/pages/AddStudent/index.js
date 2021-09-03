@@ -68,7 +68,7 @@ export default function StudentAdd() {
 
   return (
     <Container>
-      <h1>Entre com seus dados {genre}</h1>
+      <h1>Entre com seus dados</h1>
       <Loading isLoading={isLoading} />
 
       <Form onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ export default function StudentAdd() {
           </select>
         </label>
         <label htmlFor="status">
-          Escolha seu estado:
+          Escolha a forma na qual participa das aulas:
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
             <option value=""> </option>
             <option value="presencial">Presencial</option>
