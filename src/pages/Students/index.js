@@ -37,6 +37,7 @@ export default function Students() {
             <span>{student.fullname}</span>
             <span>{student.age}</span>
             <span>{student.grade}</span>
+            <span>{student.status}</span>
 
             <Link to={`/student/${student.id}/delete`}>
               <FaWindowClose size={16} />
